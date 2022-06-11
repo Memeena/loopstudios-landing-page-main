@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+
+///Colors
+
+$color-white: hsl(0, 0%, 100%);
+$color-black: hsl(0, 0%, 0%);
+$color-dark-gray: hsl(0, 0%, 55%);
+$color-very-dark-gray: hsl(0, 0%, 41%);
+
+//Font-family
+$primary-font: "Alata", sans-serif;
+$secondary-font: "Josefin Sans", sans-serif;
+
+//Font-size
+$default-font-size: 1.5rem;
+
+//font-weight
+$font-weight-400: 400;
+$font-weight-300: 300;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: $primary-font;
+  background-color: $color-white;
+}
+
+#hero {
+  background-image: url("../images/desktop/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  height: 90vh;
+}
+
+#hero,
+#features,
+#creations,
+#footer {
+  padding: 0 20rem 20rem 20rem;
+}
+
+#features {
+  margin-top: 20rem;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // // height: 100vh;
+  // padding-right: 5rem;
+}
+
+#creations {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: min-content 1fr;
+  row-gap: 5rem;
+  align-items: center;
+  // padding-bottom: 20rem;
+}
+
+#footer {
+  background-color: $color-black;
+  color: $color-white;
+  padding: 5rem 20rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.sr-only {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.heading {
+  font-family: $secondary-font;
+  font-size: clamp(3rem, 3vw, 5.5rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 56.25em) {
+  #hero {
+    background-image: url("../images/mobile/image-hero.jpg");
+  }
+
+  #hero,
+  #features,
+  #creations {
+    padding: 0 clamp(2.5rem, 5.5vw, 5.5rem);
+  }
+
+  #creations {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  #footer {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 5rem;
+  }
+}
